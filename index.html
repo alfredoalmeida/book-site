@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Amigos and a Global Revolution | Where Technology Meets Human Connections</title>
+<meta name="description" content="Three Amigos and a Global Revolution chronicles two decades of the localization industry, from the floppy disk era to AI-powered, real-time content creation. By Agustín Da Fieno Delucchi, Alfredo de Almeida, and Jorge Russo dos Santos.">
+
+<!-- Social sharing preview.
+     TODO: replace yourdomain.com with the real domain once it is live.
+     Social platforms need a full, absolute URL for the image. -->
+<meta property="og:type" content="book">
+<meta property="og:title" content="Three Amigos and a Global Revolution">
+<meta property="og:description" content="Where Technology Meets Human Connections. Two decades of localization, told by three people who were in the room for it.">
+<meta property="og:image" content="https://yourdomain.com/cover.jpg">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%236C7A60'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial,sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23fff'%3E3A%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Design tokens ----------
+     Sage is sampled straight from the book cover so the hero and the cover
+     image blend together. */
+  :root {
+    --sage: #6C7A60;
+    --forest: #2E3829;
+    --moss: #4A5841;
+    --paper: #F3F4EF;
+    --lichen: #D5DCC8;
+    --ink: #1F261B;
+    --white: #FFFFFF;
+
+    --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+
+    --wrap: 1120px;
+    --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 3px solid #F2D675;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .skip {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--white);
+    color: var(--ink);
+    padding: .75rem 1rem;
+    z-index: 100;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--sage);
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.5rem;
+  }
+  .wordmark {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: .01em;
+    text-decoration: none;
+  }
+  .site-nav { display: flex; gap: clamp(.9rem, 3vw, 1.75rem); }
+  .site-nav a {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: .95rem;
+    text-decoration: none;
+    padding: .35rem 0;
+    border-bottom: 2px solid transparent;
+  }
+  .site-nav a:hover { border-bottom-color: var(--white); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--sage);
+    color: var(--white);
+    padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3.5rem, 8vw, 6.5rem);
+  }
+  .hero-globe {
+    position: absolute;
+    left: 50%;
+    bottom: -12%;
+    width: min(1500px, 170%);
+    transform: translateX(-50%);
+    opacity: .5;
+    pointer-events: none;
+  }
+  .hero .wrap {
+    position: relative;
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .hero-title {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(3.6rem, 12.5vw, 8.75rem);
+    line-height: .88;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
+  }
+  .hero-and {
+    display: block;
+    margin-top: 1.25rem;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.7rem, 4.6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .hero-sub {
+    margin: 2rem 0 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.3;
+    max-width: 22ch;
+  }
+  .hero-lede {
+    margin: 1.25rem 0 0;
+    max-width: 34rem;
+    font-size: 1.25rem;
+    color: rgba(255,255,255,.92);
+  }
+  .hero-authors {
+    margin: 1.75rem 0 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .hero-authors span { display: block; }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2.25rem; }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .95rem 1.6rem;
+    border: 2px solid var(--white);
+    border-radius: 999px;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .btn-solid { background: var(--white); color: var(--forest); }
+  .btn-solid:hover { background: var(--lichen); border-color: var(--lichen); }
+  .btn-ghost { background: transparent; color: var(--white); }
+  .btn-ghost:hover { background: rgba(255,255,255,.14); }
+
+  .hero-cover {
+    justify-self: center;
+    width: min(100%, 360px);
+  }
+  .hero-cover img {
+    width: 100%;
+    box-shadow: 0 30px 60px -20px rgba(20,28,16,.65), 0 8px 18px rgba(20,28,16,.35);
+    animation: cover-in .9s ease-out both;
+  }
+  @keyframes cover-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @media (min-width: 900px) {
+    .hero .wrap { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+    .hero-cover { justify-self: end; }
+  }
+
+  /* ---------- Shared section styles ---------- */
+  .section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+  .section-dark { background: var(--forest); color: var(--white); }
+  .section-light { background: var(--paper); }
+  .section-lichen { background: var(--lichen); }
+
+  .section-title {
+    margin: 0 0 1.5rem;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    max-width: 18ch;
+  }
+
+  .prose { max-width: 40rem; }
+  .prose p { margin: 0 0 1.25rem; }
+
+  .lead {
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    line-height: 1.4;
+    font-weight: 600;
+    max-width: 32rem;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .about-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; }
+  }
+
+  /* ---------- Timeline (the content really is a sequence) ---------- */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.75rem;
+    border-left: 3px solid var(--sage);
+  }
+  .timeline li { position: relative; padding: 0 0 2rem 0; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.75rem - 9px);
+    top: .55rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 3px solid var(--sage);
+  }
+  .timeline li:last-child::before { background: var(--sage); }
+  .timeline h3 {
+    margin: 0 0 .25rem;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+  .timeline p { margin: 0; font-size: 1.05rem; line-height: 1.55; }
+
+  /* ---------- Authors ---------- */
+  .authors-photo { margin: 2.5rem 0 3rem; }
+  .authors-photo img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 24px 50px -24px rgba(0,0,0,.7);
+  }
+  .authors-photo figcaption {
+    margin-top: .85rem;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(255,255,255,.82);
+  }
+
+  .bio-grid { display: grid; gap: 2.75rem; grid-template-columns: 1fr; }
+  @media (min-width: 900px) {
+    .bio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+  }
+  .bio { border-top: 3px solid var(--sage); padding-top: 1.25rem; }
+  .bio h3 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+  .bio-from {
+    margin: .35rem 0 1rem;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--lichen);
+  }
+  .bio p { margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,.92); }
+
+  .together {
+    margin-top: 3rem;
+    max-width: 40rem;
+    font-size: 1.15rem;
+  }
+
+  /* ---------- Publisher ---------- */
+  .publisher { max-width: 40rem; }
+  .publisher p { margin: 0 0 1.25rem; }
+
+  /* ---------- Get the book ---------- */
+  .get {
+    background: var(--sage);
+    color: var(--white);
+    text-align: left;
+  }
+  .get .section-title { max-width: 20ch; }
+  .get p { max-width: 36rem; margin: 0 0 1.25rem; font-size: 1.2rem; }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.8);
+    padding: 2.25rem 0;
+    font-family: var(--sans);
+    font-size: .92rem;
+    line-height: 1.6;
+  }
+  .site-footer p { margin: 0 0 .35rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-cover img { animation: none; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Three Amigos</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#about">The book</a>
+      <a href="#authors">Authors</a>
+      <a href="#get">Get the book</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <!-- Faint globe lines, echoing the cover art -->
+    <svg class="hero-globe" viewBox="0 0 1500 700" fill="none" stroke="#D5DCC8" stroke-width="1.5" aria-hidden="true">
+      <ellipse cx="750" cy="420" rx="620" ry="250"/>
+      <ellipse cx="750" cy="420" rx="480" ry="250"/>
+      <ellipse cx="750" cy="420" rx="330" ry="250"/>
+      <ellipse cx="750" cy="420" rx="170" ry="250"/>
+      <ellipse cx="750" cy="420" rx="620" ry="170"/>
+      <ellipse cx="750" cy="420" rx="620" ry="90"/>
+      <line x1="130" y1="420" x2="1370" y2="420"/>
+      <line x1="750" y1="170" x2="750" y2="670"/>
+      <circle cx="380" cy="330" r="5" fill="#D5DCC8"/>
+      <circle cx="980" cy="260" r="4" fill="#D5DCC8"/>
+      <circle cx="1130" cy="480" r="6" fill="#D5DCC8"/>
+      <circle cx="600" cy="560" r="4" fill="#D5DCC8"/>
+      <circle cx="820" cy="380" r="3" fill="#D5DCC8"/>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Three Amigos
+          <span class="hero-and">and a Global Revolution</span>
+        </h1>
+        <p class="hero-sub">Where Technology Meets Human Connections</p>
+        <p class="hero-lede">
+          Two decades of localization, told by three people who were in the room for it: from floppy disks and manual hand-offs to AI-powered, real-time content creation.
+        </p>
+        <p class="hero-authors">
+          <span>Agustín Da Fieno Delucchi</span>
+          <span>Alfredo de Almeida</span>
+          <span>Jorge Russo dos Santos</span>
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="#get">Get the book</a>
+          <a class="btn btn-ghost" href="#authors">Meet the authors</a>
+        </div>
+      </div>
+
+      <div class="hero-cover">
+        <img src="cover.jpg" width="496" height="747" alt="Cover of Three Amigos and a Global Revolution: Where Technology Meets Human Connections, by Agustín Da Fieno Delucchi, Alfredo de Almeida, and Jorge Russo dos Santos. White type on a sage green background with a faint globe drawn in fine lines.">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section section-light" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2 class="section-title">A front-row seat to a global revolution</h2>
+        <div class="prose">
+          <p class="lead">
+            In the late 1990s, Dublin was becoming Europe’s Silicon Valley. Three professionals from Brazil, Peru, and Portugal ended up right in the middle of it.
+          </p>
+          <p>
+            Ireland’s capital had emerged as a burgeoning hub for technology and innovation, and the localization industry was changing fast alongside it. Amid that dynamic environment, three newcomers found themselves at the forefront of a profession that was still figuring out what it wanted to be.
+          </p>
+          <p>
+            <em>Three Amigos and a Global Revolution</em> chronicles the evolution of that industry over two transformative decades. It starts with the manual processes of the floppy disk era and runs all the way to the arrival of AI-powered, real-time content creation. Along the way, it offers a comprehensive look at the technological advances and the collaborative efforts that redefined globalization.
+          </p>
+          <p>
+            The book combines industry insight with a historical perspective. It is a story about tools and systems, sure, but mostly it is about the people behind them, and the resilience, innovation, and strategic collaboration that carried the industry from one era to the next.
+          </p>
+          <!-- TODO: the back-cover text you pasted was cut off mid-sentence
+               ("...strategic collaboration that have shaped"). Paste the rest
+               of the sentence here if you want the exact back-cover wording. -->
+          <p>
+            It closes by looking ahead, to a methodology called Intent-Driven Content Creation (IDCC), in which AI generates market-appropriate content from semantic intent instead of translating from a source document. If translation was the first chapter of this story, that is where the authors think the next one begins.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-title">What the book covers</h2>
+        <ol class="timeline">
+          <li>
+            <h3>The floppy disk era</h3>
+            <p>Localization as a hands-on craft. Files moved by hand, teams were spread across countries, and getting a product out in another language took a lot of patience and a lot of coordination.</p>
+          </li>
+          <li>
+            <h3>Memory and management</h3>
+            <p>Translation memory and translation management systems turn one-off projects into repeatable, scalable pipelines.</p>
+          </li>
+          <li>
+            <h3>Machines join the conversation</h3>
+            <p>Machine translation arrives, then neural machine translation changes what quality means and what people expect from it.</p>
+          </li>
+          <li>
+            <h3>An ecosystem takes shape</h3>
+            <p>Language service providers, content management system integrations, and the push for simultaneous multilingual release reshape how global products are built and shipped.</p>
+          </li>
+          <li>
+            <h3>Beyond translation</h3>
+            <p>Transcreation and content orchestration move the conversation from converting words to creating the right experience for each market.</p>
+          </li>
+          <li>
+            <h3>Intent-Driven Content Creation</h3>
+            <p>IDCC: AI generates market-appropriate content from semantic intent, with no source document to translate from.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AUTHORS ================= -->
+  <section class="section section-dark" id="authors">
+    <div class="wrap">
+      <h2 class="section-title">Three engineers, three countries, one Dublin office</h2>
+      <div class="prose">
+        <p class="lead">
+          They met at Microsoft’s localization operation in Dublin in the late 1990s, and they have been sharing notes on the industry ever since.
+        </p>
+      </div>
+
+      <figure class="authors-photo">
+        <img src="authors.jpg" width="2000" height="1050" loading="lazy" alt="The three authors standing side by side and smiling at the camera in an older photograph.">
+        <!-- TODO: confirm or edit this caption (place and year, if you want them). -->
+        <figcaption>The three amigos, back when it all started.</figcaption>
+      </figure>
+
+      <div class="bio-grid">
+
+        <article class="bio">
+          <h3>Agustín Da Fieno Delucchi</h3>
+          <p class="bio-from">From Lima, Peru</p>
+          <p>
+            Agustín’s background is in computer science. After graduating in 1993, he spent several years working as an independent software developer in Lima, building software for companies, government agencies, and educational institutions.
+          </p>
+          <p>
+            He moved to Dublin in 1998 to join Microsoft as a Language Specialist. Since then he has held a wide range of roles, both as an individual contributor and as a manager, across engineering, program management, compliance, architecture, data science, and AI.
+          </p>
+          <p>
+            Today his work centers on using artificial intelligence and data science to build technology that is globally accessible, efficient, and centered on people. He is a strong advocate for ethical AI design and governance, and for technologies that augment human potential rather than replace it. He is also an instructor for the Certificate in Localization at the University of Washington.
+          </p>
+        </article>
+
+        <article class="bio">
+          <h3>Alfredo de Almeida</h3>
+          <p class="bio-from">From Rio de Janeiro, Brazil</p>
+          <p>
+            Alfredo holds a degree in computer science, with a focus on software engineering, from the Universidade Federal do Rio de Janeiro. His localization career started in his hometown, where he worked as a software engineer at IDOC, a local localization company.
+          </p>
+          <p>
+            In April 1995 he moved to Dublin to work as a localizer, and he has been at Microsoft ever since, in roles as both an individual contributor and a manager. His path has taken him through engineering, program management, architecture, data science, and AI, and he is today a Senior Localization Architect.
+          </p>
+          <p>
+            His expertise spans agile software engineering, business analytics, international project management, internationalization and globalization, user experience, and linguistics. He is also an instructor for the Certificate in Localization at the University of Washington.
+          </p>
+        </article>
+
+        <article class="bio">
+          <h3>Jorge Russo dos Santos</h3>
+          <p class="bio-from">From Santo Tirso, Portugal</p>
+          <p>
+            Jorge graduated as an electronic engineer in 1999 from the Universidade do Minho in Guimarães. Right after college he moved to Dublin, where he joined Microsoft as a Software Localization Engineer.
+          </p>
+          <p>
+            He left Microsoft in 2015 and has kept working in localization at some of the biggest names in tech, including Cisco, Workday, Meta, Amazon, Block, and Salesforce. He is a PMP-certified program manager with a track record of delivering projects on time and on budget, and plenty of experience leading international teams across locations and time zones.
+          </p>
+          <p>
+            His skills cover localization, localizability, internationalization, and globalization, in both waterfall and agile environments. Like his co-authors, he is an instructor for the Certificate in Localization at the University of Washington.
+          </p>
+        </article>
+
+      </div>
+
+      <p class="together">
+        Between them, the three authors have worked at Microsoft, Cisco, Workday, Meta, Amazon, Block, and Salesforce, and all three teach the next generation of localization professionals. This book is what happens when you put twenty-plus years of that experience in one place.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= PUBLISHER ================= -->
+  <section class="section section-lichen" id="publisher">
+    <div class="wrap">
+      <h2 class="section-title">Published by Nimdzi Insights</h2>
+      <div class="publisher">
+        <p>
+          <em>Three Amigos and a Global Revolution</em> is published by Nimdzi Insights, a name well known across the language and localization industry. The authors chose to publish with Nimdzi because it puts the book in front of the professionals who will get the most out of it: the people building, buying, and running localization every day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GET THE BOOK ================= -->
+  <section class="section get" id="get">
+    <div class="wrap">
+      <h2 class="section-title">Get the book</h2>
+      <p>
+        The book is heading to print with Nimdzi Insights. Purchase links will be posted right here as soon as they are live.
+      </p>
+      <p>
+        In the meantime, if you would like to get in touch about the book, a speaking engagement, or a conversation about the future of localization, drop the authors a line.
+      </p>
+
+      <div class="cta-row">
+        <!-- TODO: replace with the real contact address. -->
+        <a class="btn btn-solid" href="mailto:hello@yourdomain.com">Contact the authors</a>
+
+        <!-- TODO: when the book is available, uncomment this button and
+             paste the purchase link in the href.
+        <a class="btn btn-ghost" href="PASTE-PURCHASE-LINK-HERE">Buy the book</a>
+        -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Three Amigos and a Global Revolution</strong>: Where Technology Meets Human Connections</p>
+    <p>Agustín Da Fieno Delucchi, Alfredo de Almeida, and Jorge Russo dos Santos. Published by Nimdzi Insights.</p>
+    <p>&copy; 2026 The authors. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
